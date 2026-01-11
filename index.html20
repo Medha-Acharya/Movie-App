@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+
+<title>Movie App</title>
+
+
+
+<style>
+
+    body {
+
+        margin: 0;
+
+        font-family: Arial, sans-serif;
+
+        background-color: #111;
+
+        color: white;
+
+    }
+
+     header {
+
+        background-color: #e50914;
+
+        padding: 20px;
+
+        text-align: center;
+
+    }
+
+    header input {
+
+        margin-top: 10px;
+
+        padding: 10px;
+
+        width: 60%;
+
+        border-radius: 5px;
+
+        border: none;
+
+        font-size: 16px;
+
+    }
+
+    .movies {
+
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+        gap: 25px;
+
+        padding: 20px;
+
+    }
+
+    .movie-card {
+
+        background-color: #222;
+
+        padding: 15px;
+
+        border-radius: 10px;
+
+        text-align: center;
+
+
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    .movie-card img {
+
+        width: 100%;
+
+        border-radius: 10px;
+
+    }
+
+    .movie-card h3 {
+
+        margin: 10px 0 5px;
+
+    }
+
+
+
+    .movie-card p {
+
+        margin: 4px 0;
+
+        font-size: 14px;
+
+    }
+
+    .movie-card button {
+
+        margin-top: auto;
+
+        padding: 10px;
+
+        width: 90%;
+
+        white-space: nowrap;
+
+        background-color: #e50914;
+
+        color: white;
+
+        border: none;
+
+        border-radius: 5px;
+
+        cursor: pointer;
+
+    }
+
+</style>
+
+</head><body><header>
+
+    <h1>🎬 Movie App</h1>
+
+    <input 
+
+        type="text" 
+
+        placeholder="Search movies..." 
+
+        id="searchInput" 
+
+        onkeyup="searchMovies()">
+
+</header>
+
+
+
+<section class="movies">
+
+
+
+    <div class="movie-card">
+
+        <img src="Inceptionnew.jpg">
+
+        <h3 class="movie-title">Inception</h3>
+
+        <p>Year: 2010</p>
+
+        <p>Rating: ⭐ 8.8</p>
+
+        <button>Add to Favorites</button>
+
+    </div>
+
+
+
+    <div class="movie-card">
+
+        <img src="intersellar.jpg">
+
+        <h3 class="movie-title">Interstellar</h3>
+
+        <p>Year: 2014</p>
+
+        <p>Rating: ⭐ 8.6</p>
+
+        <button>Add to Favorites</button>
+
+    </div>
+
+
+
+    <div class="movie-card">
+
+        <img src="Avatar.jpg">
+
+        <h3 class="movie-title">Avatar</h3>
+
+        <p>Year: 2009</p>
+
+        <p>Rating: ⭐ 7.8</p>
+
+        <button>Add to Favorites</button>
+
+    </div>
+
+
+
+    <div class="movie-card">
+
+        <img src="Titanic.jpg">
+
+        <h3 class="movie-title">Titanic</h3>
+
+        <p>Year: 1997</p>
+
+        <p>Rating: ⭐ 7.9</p>
+
+        <button>Add to Favorites</button>
+
+    </div>
+
+
+
+    <div class="movie-card">
+
+        <img src="Stranger things.jpg">
+
+        <h3 class="movie-title">Stranger things</h3>
+
+        <p>Year: 2019</p>
+
+        <p>Rating: ⭐ 8.4</p>
+
+        <button>Add to Favorites</button>
+
+    </div>
+
+
+
+
+
+</section>
+
+
+
+<script>
+
+    function searchMovies() {
+
+        let input = document.getElementById("searchInput").value.toLowerCase();
+
+        let cards = document.getElementsByClassName("movie-card");
+
+
+
+        for (let i = 0; i < cards.length; i++) {
+
+            let title = cards[i]
+
+                .getElementsByClassName("movie-title")[0]
+
+                .innerText
+
+                .toLowerCase();
+
+
+
+            if (title.includes(input)) {
+
+                cards[i].style.display = "flex";
+
+            } else {
+
+                cards[i].style.display = "none";
+
+            }
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
